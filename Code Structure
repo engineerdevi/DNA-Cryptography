@@ -1,0 +1,62 @@
+Classes:
+
+Cipher {
+  which has main() gives Opts for 1. Encryption
+  2. Decryption
+  3. Exit
+  and directs accordingly by creating Encode or Decode objects.
+}
+
+Ascii {
+Data members:
+  ASCII[]
+Member methods:
+  public char getASCII(int at) { }
+  public static int findPosition(char ch) {}
+}
+
+Encode implements Nucleotide extends Ascii {
+  Data members:
+    HashMap<String, Integer> source;
+	  String encryptString;
+	  int cipherKey;
+	  String filename;
+	Member methods:
+	  void encrypt()  { }
+	  private substituteNucleotide(){ }						
+	  private substituteASCIIForDNA() { }					
+  	private writeFile() { }
+}
+	
+class Decode extends Ascii implements Nucleotide {
+  Data members:
+    int cipherkey;								
+    String filename, DNAPattern;	
+  Member methods:
+    void decrypt() { }
+    private void buildMessage() { }
+    private writeFile() { }
+  
+}
+  
+class RandomDNA extends Ascii {
+   Data members:
+    private ArrayList<String> combinationList;
+	  HashMap<String, Integer> source;
+	Member methods:  
+	   public ArrayList<String> getCombList() { }
+	   public String[] getAllLists(String[] elements, int lengthOfList){ }
+	   private int getRandomNumber(int seed){ }
+	   public String randomDNA(int seed){ }
+	   public HashMap<String, Integer> createHashMap(int index){ }
+}	   
+
+
+public interface Nucleotide {
+// bit patterns for DNA elements
+	final static String A = "00";
+	final static String C = "01";
+	final static String G = "10";
+	final static String T = "11";
+	
+} 
